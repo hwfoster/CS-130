@@ -46,22 +46,26 @@ h1 {
 
 #inspiration a, 
 #inspiration a:link,
-#inspiration a:hover, 
 #inspiration a:visited,
 #lectures a, 
 #lectures a:link,
-#lectures a:hover, 
 #lectures a:visited,
 #homework a, 
 #homework a:link,
-#homework a:hover, 
 #homework a:visited,
 #tutorials a, 
 #tutorials a:link,
-#tutorials a:hover, 
 #tutorials a:visited
 {
     color: #011627;
+}
+
+#inspiration a:hover, 
+#lectures a:hover, 
+#homework a:hover, 
+#tutorials a:hover
+{
+    color: #CE7B91;
 }
 
 footer {
