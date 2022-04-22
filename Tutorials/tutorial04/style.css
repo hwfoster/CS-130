@@ -1,12 +1,86 @@
+
+body * {
+   box-sizing: border-box;
+   border: solid 0px #000;
+   margin: 10px;
+}
+
 .container {
    display: grid;
-/* grid-template-columns: ???;
-   grid-template-rows: ???;
-   grid-template-areas: ???; 
-*/
+   grid-template-columns: 3fr 3fr 3fr 1fr;
+   grid-template-rows: 1fr 1fr 3fr .5fr 3fr;
+   grid-template-areas:
+      "menu1 . menu2 menu2"
+      ". . . ."
+      "card1 card2 card3 aside"
+      ". . . aside"
+      "main main main aside"; 
    min-height: 100vh;
 }
 
+.menu1 {
+   grid-area: menu1;
+   background-color: hotpink;
+ }
+ 
+.menu2 {
+   grid-area: menu2;
+   background-color: yellow;
+ }
+ 
+.card1 {
+   grid-area: card1;
+   background-color: cyan;
+ }
+ 
+.card2 {
+   grid-area: card2;
+   background-color: cyan;
+ }
+ 
+ .card3 {
+   grid-area: card3;
+   background-color: cyan;
+ }
+ 
+ .aside {
+   grid-area: aside;
+   background-color: gray;
+ }
+
+ .main {
+    grid-area: main;
+    background-color: cyan;
+ }
+
 @media (max-width: 1024px) {
-   /* tablet layout here */
+   .container {
+      display: grid;
+      grid-template-columns: 3fr 3fr 1fr 3fr 3fr;
+      grid-template-rows: 1fr 1fr 3fr 2fr 1fr;
+      grid-template-areas:
+         "menu1 . menu2 menu2 menu2"
+         "aside aside aside aside aside"
+         "card1 card1 . card2 card2"
+         "card3 card3 card3 card3 card3"
+         "main main main main main"; 
+      min-height: 100vh;
+   }
+}
+
+@media (max-width: 720px) {
+   .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 3fr 3fr 3fr 2fr 1fr;
+      grid-template-areas:
+         "menu1 . ."
+         "menu2 menu2 menu2"
+         "card1 card1 card1"
+         "card2 card2 card2"
+         "card3 card3 card3"
+         "main main main"
+         "aside aside aside"; 
+      min-height: 100vh;
+   }
 }
