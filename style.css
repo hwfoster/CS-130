@@ -4,13 +4,13 @@
 }
 
 body {
+    height: 100vh;
     margin: 0px;
     font-family: 'Josefin Sans', sans-serif;
     color: #CE7B91;
     background-color: transparent;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
 }
 
 header, section {
