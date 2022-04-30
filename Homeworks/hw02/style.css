@@ -203,7 +203,7 @@ section h2 {
     font-size: 100%;
 }
 
-button {
+section button {
     background-color: #1DB954;
     color: white;
     padding: 0px;
@@ -212,6 +212,7 @@ button {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    opacity: 0%;
 }
 
 section i {
