@@ -81,32 +81,185 @@ footer {
 /***************************/
 
 /* Your Code Here */
+aside > h1 {
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 20px;
+}
 
+aside, i {
+    padding-right: 20px;
+    /* font-size: 30px; */
+}
+
+h1 > i {
+    padding: 1px;
+    font-size: 30px;
+    font: "helvetica neue";
+}
+
+aside > a {
+    display: flex;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 10px;
+    opacity: 75%;
+}
 
 
 /********************************/
 /* Part B: Header & Nav Styling */
 /********************************/
 
-/* Your Code Here */
+main header  {
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ padding: 20px;
+ font: "helvetica neue";
+ letter-spacing: 1.5px;
+}
 
+main a {
+    display: flex;
+    padding: 20px;
+    font-size: 13px;
+   }
 
+header a {
+    border: solid 1px #FFF;
+    border-radius: 15px;
+    padding: 7px;
+    margin: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
+header i {
+   padding-right: 5px;
+   padding-top: 0px;
+   font-size: 16px;
+}
+
+#profile {
+    background-color: rgb(40, 40, 40);
+    border-width: 0px;
+    font-weight: bold;
+ }
+
+nav  {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font: "helvetica neue";
+    font-weight: bold;
+    letter-spacing: 2px;
+   }
+
+nav a {
+    display: flex;
+    flex-direction: row;
+}
 
 
 /*************************/
 /* Part C: Artists Panel */
 /*************************/
 
-/* Your Code Here */
+#featured-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-around;
+}
 
+section {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(40, 40, 40);
+    padding: 10px;
+    margin: 0px;
+    margin-bottom: 25px;
+    width: 18%;
+}
 
+section img {
+    border-radius: 50%;
+    padding: 10px;
+    padding-bottom: 0px;
+    width: 100%;
+}
 
+section p {
+    line-height: 0px;
+    font-size: 80%;
+    color: lightgray;
+}
+
+section h2 {
+    font-size: 100%;
+}
+
+button {
+    background-color: #1DB954;
+    color: white;
+    padding: 0px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+section i {
+    padding: 0px;
+}
 
 /**************************/
 /* Part D: Responsive UIs */
 /**************************/
 
-/* Your Code Here */
+@media only screen and (max-width: 1024px) {
+    main {
+        flex-wrap: wrap;
+    }
+    section {
+        width: calc(33% - 20px);
+    }
+}
 
+@media only screen and (max-width: 600px) {
+    section {
+        width: calc(50% - 20px);
+    }
 
+    main {
+        flex-wrap: wrap;
+    }
+    
+    aside {
+        display: none;
+    }
+
+    body {
+        overflow: hidden;
+        margin: 0px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 100px;
+        grid-template-areas:
+           "main"
+           "bottom";
+        height: 100vh;
+    }
+
+    header {
+        background: #111;
+        position: fixed;
+        width: 100%;
+        left: 0px;
+    }
+}

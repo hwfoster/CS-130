@@ -43,7 +43,7 @@ footer {
     flex-direction: row;
     width: 110px;
     align-self: center;
-    align-items: center;
+    align-items:center;
     margin-bottom: 10px;
 }
 .player .controls button {
