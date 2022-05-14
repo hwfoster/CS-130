@@ -35,6 +35,7 @@ const getArtist = (term) => {
         get artists from spotify based on the search term
         "${term}" and load the first artist into the #artist section 
         of the DOM...`);
+        
 };
 
 

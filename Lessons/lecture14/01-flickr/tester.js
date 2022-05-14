@@ -15,7 +15,7 @@ const showData = () => {
 
 
 const doSomethingWithTheData = (data) => {
-    document.querySelector('#gallery').innerHTML += "";
+    document.querySelector('#gallery').innerHTML += " ";
     // this function executes once the data has been 
     // pulled down from the server:
     results = data;
