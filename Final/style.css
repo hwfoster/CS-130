@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background-color: white;
+    margin: 0 auto;
+    /*--max-width: 1000px;--*/
+  }
+  
+  .item {
+    padding: 8px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 6px;
+    /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25); */
+  }
+  
+  .height-50 {
+    height: 50vh;
+  }
+  
+  /* Task 3 */
+  
+  .task-3.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr .5fr 1.5fr .5fr 2fr .5fr;
+    grid-template-rows: 10vh 24vh 49vh 12vh 5vh;
+    grid-template-areas: 
+      "header header header header header header" 
+      ". back tops forward menu ."
+      ". back bottoms forward menu ."
+      ". back shoes forward menu ."
+      "footer footer footer footer footer footer";
+  }
+  
+  .task-3 .header {
+    grid-area: header;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: lighter;
+    font-size: 3em;
+    padding: 15px;
+  }
+  
+  .task-3 .tops {
+    grid-area: tops;
+    max-height: 100%;
+  }
+
+.tops img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100%;
+}
+
+.bottoms img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100%;
+}
+
+.shoes img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100%;
+}
+  
+  .task-3 .menu {
+    grid-area: menu;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    max-height: 100%;
+    justify-content: space-evenly;
+    padding: 3px;
+    
+  }
+
+  .menu img {
+    object-fit: contain;
+    width: 31%;
+    max-height: 30%;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .task-3 .back {
+    grid-area: back;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15vh;
+    padding-bottom: 3vh;
+  }
+
+  .task-3 .forward {
+    grid-area: forward;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15vh;
+    padding-bottom: 3vh;
+  }
+  
+  .task-3 .bottoms {
+    grid-area: bottoms;
+    max-height: 100%;
+  }
+
+  .task-3 .shoes {
+    grid-area: shoes;
+    max-height: 100%;
+  }
+  
+  .task-3 .footer {
+    grid-area: footer;
+  }
+  
+  
+  
+  @media (max-width: 1020px) {
+    .task-3.container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      grid-template-rows: 1fr 1fr 6fr 1fr;
+      grid-template-areas: 
+        "header header" 
+        "tops tops"
+        "back bottoms"
+        "menu footer";
+    }
+  }
+  
+  
+  @media (max-width: 720px) {
+    .task-3.container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 6fr 1fr 1fr 1fr;
+      grid-template-areas: 
+        "header" 
+        "tops"
+        "bottoms"
+        "back"
+        "menu"
+        "footer";
+    }
+  }
