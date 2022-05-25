@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>Spotify Player</title>
         <link rel="stylesheet" href="style.css">
@@ -10,22 +10,23 @@
     <body id="container">
         <aside id="sidebar">
             <h1>
-                <i class="fab fa-spotify"></i>
+                <i class="fab fa-spotify" aria-hidden="true"></i>
                 Spotify
             </h1>
             <a class="selected" href="#">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" aria-hidden="true"></i>
                 Search
             </a>
         </aside>
 
         <main>
             <header>
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" aria-hidden="true"></i>
                 <input type="search" 
                     placeholder="Search for Artists or Songs" 
                     id="search" 
-                    value="" />
+                    value=""
+                    aria-label="Search" />
             </header>
             <article id="featured-content">
                 <section id="artist-section">
@@ -34,11 +35,11 @@
                 </section>
                 <section id="track-section">
                     <h1>Songs</h1>
-                    <section id="tracks">First 5 tracks go here.</section>
+                    <section id="tracks"></section>
                 </section>
                 <section id="album-section">
                     <h1>Albums</h1>
-                    <section id="albums">Albums go here.</section>
+                    <section id="albums"></section>
                 </section>
             </article>
         </main>
@@ -49,9 +50,9 @@
             </div>
             <div class="player">
                 <div class="controls">
-                    <button id="rwd" aria-label="rewind"><i class="fas fa-step-backward"></i></button>
-                    <button id="play_pause" aria-label="play or pause"><i class="far fa-play-circle"></i></button>
-                    <button id="ffwd" aria-label="fast forward"><i class="fas fa-step-forward"></i></button>
+                    <button id="rwd" aria-label="rewind"><i class="fas fa-step-backward" aria-hidden="true"></i></button>
+                    <button id="play_pause" aria-label="play or pause"><i class="far fa-play-circle" aria-hidden="true"></i></button>
+                    <button id="ffwd" aria-label="fast forward"><i class="fas fa-step-forward" aria-hidden="true"></i></button>
                 </div>
                 <div class="slider">
                     <audio preload class="audio">

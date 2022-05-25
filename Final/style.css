@@ -32,7 +32,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr .5fr 1.5fr .5fr 2fr .5fr;
-    grid-template-rows: 10vh 24vh 49vh 12vh 5vh;
+    grid-template-rows: 10vh 30vh auto 15vh 2vh;
     grid-template-areas: 
       "header header header header header header" 
       ". back tops forward menu ."
@@ -51,26 +51,30 @@
   
   .task-3 .tops {
     grid-area: tops;
-    max-height: 100%;
+    background-image: url('images/tops/pinkcrop.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0px solid black;
   }
 
-.tops img {
-    object-fit: contain;
-    width: 100%;
-    max-height: 100%;
-}
+  .task-3 .bottoms {
+    grid-area: bottoms;
+    background-image: url('images/bottoms/f21rippedjeans.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0px solid black;
+  }
 
-.bottoms img {
-    object-fit: contain;
-    width: 100%;
-    max-height: 100%;
-}
-
-.shoes img {
-    object-fit: contain;
-    width: 100%;
-    max-height: 100%;
-}
+  .task-3 .shoes {
+    grid-area: shoes;
+    background-image: url('images/shoes/nikes.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0px solid black;
+  }
   
   .task-3 .menu {
     grid-area: menu;
@@ -115,15 +119,7 @@
     padding-bottom: 3vh;
   }
   
-  .task-3 .bottoms {
-    grid-area: bottoms;
-    max-height: 100%;
-  }
-
-  .task-3 .shoes {
-    grid-area: shoes;
-    max-height: 100%;
-  }
+  
   
   .task-3 .footer {
     grid-area: footer;

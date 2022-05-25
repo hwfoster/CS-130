@@ -19,6 +19,7 @@ const search = (ev) => {
 const getTracks = (term) => {
     
         document.querySelector('#tracks').innerHTML = "";
+        
         console.log(`
             get tracks from spotify based on the search term
             "${term}" and load them into the #tracks section 
@@ -32,32 +33,60 @@ const getTracks = (term) => {
            }) 
         .then((data) => { 
             console.log(data);
+            
             if (data.length > 0) {
             for (const track of data) {
                 document.querySelector('#tracks').innerHTML += 
-            `<button class="track-item preview" 
-                data-preview-track="${track.preview_url}" onclick="handleTrackClick(event);">
-                <img src="${track.album.image_url}">
-                <i class="fas play-track fa-play" aria-hidden="true"></i>
-            <div class="label">
-                <h2>${track.name}</h2>
-                <p>
-                    ${track.artist.name}
-                </p>
-            </div>
-            </button>`
+                    `<button class="track-item preview" data-preview-track="${track.preview_url}" onclick="handleTrackClick(event);">
+                        <img src="${track.album.image_url}" alt= "Photo of ${track.album.name}">
+                        <i class="fas play-track fa-play" aria-hidden="true"></i>
+                        <div class="label">
+                            <h2>${track.name}</h2>
+                            <p>${track.artist.name}</p>
+                        </div>
+                    </button>`
             }
         } else {
-            document.querySelector('#tracks').innerHTML += `<p>No Results Found</p>`   
+            document.querySelector('#tracks').innerHTML += `<p>No Results Found for "${term}"</p>`   
         } 
         });
 };
 
 const getAlbums = (term) => {
+    document.querySelector('#albums').innerHTML = "";
     console.log(`
         get albums from spotify based on the search term
         "${term}" and load them into the #albums section 
         of the DOM...`);
+
+        let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+        fetch(url)
+        .then((response) => { 
+            // takes a response stream and reads it to completion
+            return response.json(); 
+           }) 
+        .then((data) => { 
+            console.log(data);
+
+            if (data.length > 0) {
+                for (const album of data) {
+                    document.querySelector('#albums').innerHTML += 
+                    `<section class="album-card" id="${album.id}">
+                    <div>
+                        <img src="${album.image_url}" alt= "Photo of ${album.name}">
+                        <h2>${album.name}</h2>
+                        <div class="footer">
+                            <a href="https://open.spotify.com/${album.id}" target="_blank">
+                            view on spotify
+                            </a>
+                        </div>
+                    </div>
+                    </section>`
+            }
+        } else {
+            document.querySelector('#albums').innerHTML += `<p>No Results Found for "${term}"</p>`   
+        } 
+        });
 };
 
 
@@ -81,7 +110,7 @@ const getArtist = (term) => {
             document.querySelector('#artist').innerHTML += 
             `<section class="artist-card" id="${artist.id}">
             <div>
-                <img src="${artist.image_url}">
+                <img src="${artist.image_url}" alt= "Photo of ${artist.name}">
                 <h2>${artist.name}</h2>
                 <div class="footer">
                     <a href="https://open.spotify.com/${artist.id}" target="_blank">
@@ -92,16 +121,25 @@ const getArtist = (term) => {
             </section>`
         }
     } else {
-        document.querySelector('#artist').innerHTML += `<p>No Results Found</p>`   
+        document.querySelector('#artist').innerHTML += `<p>No Results Found for "${term}"</p>`   
     } 
     });
 };
-document.querySelector('#search').addEventListener('click', getArtist);
+//document.querySelector('#search').addEventListener('click', getArtist);
 
 const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
+    document.querySelector('#track').src = previewUrl;
+    audioPlayer.togglePlay();
+    openPlayer();
+    document.querySelector('footer .track-item').innerHTML = ev.currentTarget.innerHTML;
 }
+
+// const handleAlbumClick = (ev) => {
+//     const previewUrl = ev.currentTarget.getAttribute('data-preview-album');
+//     console.log(previewUrl);
+// }
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
@@ -111,3 +149,8 @@ document.querySelector('#search').onkeyup = (ev) => {
         search();
     }
 };
+
+function openPlayer(e){
+    document.querySelector('footer').style.display = 'flex';
+	// document.getElementById('player').style.display = 'block';
+}

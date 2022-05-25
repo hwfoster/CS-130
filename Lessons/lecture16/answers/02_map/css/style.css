@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 80vh;
+    
+}
+
+#map { 
+    border: 1px solid black;
+
+}
+
+#restaurant-detail {
+    border: 1px solid black;
+}
