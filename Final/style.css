@@ -51,7 +51,7 @@
   
   .task-3 .tops {
     grid-area: tops;
-    background-image: url('images/tops/pinkcrop.png');
+    background-image: url('images/tops/blacktank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -60,7 +60,7 @@
 
   .task-3 .bottoms {
     grid-area: bottoms;
-    background-image: url('images/bottoms/f21rippedjeans.png');
+    background-image: url('images/bottoms/bdgshort.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -69,7 +69,7 @@
 
   .task-3 .shoes {
     grid-area: shoes;
-    background-image: url('images/shoes/nikes.png');
+    background-image: url('images/shoes/hokas.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -89,14 +89,61 @@
     
   }
 
-  .menu img {
-    object-fit: contain;
+  .menu .topimage {
+    cursor: pointer;
     width: 31%;
-    max-height: 30%;
+    height: 25%;
     border: 1px solid gray;
     border-radius: 6px;
-    padding: 5px;
     margin: 5px;
+    padding: 5px;
+    background-position: center;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+  }
+
+  .topimage:active {
+    border: solid 1px black;
+  }
+
+  .menu .bottomimage {
+    cursor: pointer;
+    width: 31%;
+    height: 25%;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 5px;
+    background-position: center;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+  }
+
+  .bottomimage:active {
+    border: solid 1px black;
+  }
+
+  .menu .shoeimage {
+    cursor: pointer;
+    width: 31%;
+    height: 25%;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 5px;
+    background-position: center;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+  }
+
+  .shoeimage:active {
+    border: solid 1px black;
   }
   
   .task-3 .back {
