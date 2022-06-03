@@ -2,35 +2,16 @@
     box-sizing: border-box;
   }
   
-  ul {
-    padding-left: 1.5rem;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    color: #333;
-    background-color: white;
-    margin: 0 auto;
-    /*--max-width: 1000px;--*/
-  }
-  
   .item {
-    padding: 8px;
-    background-color: white;
     border: 0px solid black;
     border-radius: 6px;
-    /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25); */
   }
-  
-  .height-50 {
-    height: 50vh;
-  }
-  
-  /* Task 3 */
   
   .task-3.container {
     height: 100vh;
+    font-size: 100%;
     display: grid;
+    box-sizing: border-box;
     grid-template-columns: 1fr .5fr 1.5fr .5fr 2fr .5fr;
     grid-template-rows: 10vh 30vh auto 15vh 2vh;
     grid-template-areas: 
@@ -47,6 +28,10 @@
     font-weight: lighter;
     font-size: 3em;
     padding: 15px;
+    background-color: white;
+    color: #333;
+    border: solid 0px black;
+
   }
   
   .task-3 .tops {
@@ -84,9 +69,8 @@
     flex-wrap: wrap;
     overflow: scroll;
     max-height: 100%;
-    justify-content: space-evenly;
     padding: 3px;
-    
+    justify-content: space-around;
   }
 
   .menu .topimage {
@@ -154,6 +138,7 @@
     align-items: center;
     padding-top: 15vh;
     padding-bottom: 3vh;
+    cursor: pointer;
   }
 
   .task-3 .forward {
@@ -164,32 +149,33 @@
     align-items: center;
     padding-top: 15vh;
     padding-bottom: 3vh;
+    cursor: pointer;
   }
-  
-  
   
   .task-3 .footer {
     grid-area: footer;
   }
   
-  
-  
   @media (max-width: 1020px) {
     .task-3.container {
       height: 100vh;
       display: grid;
-      grid-template-columns: 2fr 2fr;
-      grid-template-rows: 1fr 1fr 6fr 1fr;
+      grid-template-columns: .5fr 4fr .5fr;
+      grid-template-rows: 8vh 17vh 23vh 10vh 5vh 35vh 2vh;
       grid-template-areas: 
-        "header header" 
-        "tops tops"
-        "back bottoms"
-        "menu footer";
+        "header header header" 
+        "back tops forward"
+        "back bottoms forward"
+        "back shoes forward"
+        ". . ."
+        "menu menu menu" 
+        "footer footer footer";
     }
+
   }
+
   
-  
-  @media (max-width: 720px) {
+  /* @media (max-width: 720px) {
     .task-3.container {
       height: 100vh;
       display: grid;
@@ -203,4 +189,4 @@
         "menu"
         "footer";
     }
-  }
+  } */
