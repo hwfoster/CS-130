@@ -47,7 +47,7 @@ const initScreen = () => {
                 onclick="handleThumbnailClick(event)"
                 style="background-image:url('${topimage}')"
                 data-index=${idx}"
-                aria-label="Displays image ${idx} in the main panel.">
+                aria-label="Displays image of ${topimage} in the main panel.">
             </button>`;
     });
 };
@@ -59,7 +59,7 @@ const initScreenB = () => {
                 onclick="handleThumbnailClickB(event)"
                 style="background-image:url('${bottomimage}')"
                 data-index=${idx}"
-                aria-label="Displays image ${idx} in the main panel.">
+                aria-label="Displays image of ${bottomimage} in the main panel.">
             </button>`;
     });
 };
@@ -71,51 +71,38 @@ const initScreenS = () => {
                 onclick="handleThumbnailClickS(event)"
                 style="background-image:url('${shoeimage}')"
                 data-index=${idx}"
-                aria-label="Displays image ${idx} in the main panel.">
+                aria-label="Displays image of ${shoeimage} in the main panel.">
             </button>`;
     });
 };
 
 const handleThumbnailClick = ev => {
-    // figure out which element user clicked on
     const elem = ev.currentTarget;
     console.log(elem);
-    // store the elements bg image in a variable
     const bgImage = elem.style.backgroundImage;
-    // update featured image's bg image with the bg image of the thumbnail we just clicked
     document.querySelector('.task-3 .tops').style.backgroundImage = bgImage;
-    // update current index to the index associated with the thumbnail the user clicked on
     currentIndexTops = parseInt(elem.dataset.index);
     console.log(currentIndexTops);
 }
 
 const handleThumbnailClickB = ev => {
-    // figure out which element user clicked on
     const elem = ev.currentTarget;
     console.log(elem);
-    // store the elements bg image in a variable
     const bgImage = elem.style.backgroundImage;
-    // update featured image's bg image with the bg image of the thumbnail we just clicked
     document.querySelector('.task-3 .bottoms').style.backgroundImage = bgImage;
-    // update current index to the index associated with the thumbnail the user clicked on
     currentIndexBottoms = parseInt(elem.dataset.index);
     console.log(currentIndexBottoms);
 }
 
 const handleThumbnailClickS = ev => {
-    // figure out which element user clicked on
     const elem = ev.currentTarget;
     console.log(elem);
-    // store the elements bg image in a variable
     const bgImage = elem.style.backgroundImage;
-    // update featured image's bg image with the bg image of the thumbnail we just clicked
     document.querySelector('.task-3 .shoes').style.backgroundImage = bgImage;
-    // update current index to the index associated with the thumbnail the user clicked on
     currentIndexShoes = parseInt(elem.dataset.index);
     console.log(currentIndexShoes);
 }
 
-// 1. create function that handles previous
 const previousTops = () => {
     if (currentIndexTops > 0) {
         currentIndexTops -= 1;
@@ -128,7 +115,6 @@ const previousTops = () => {
     url('${topsimages[currentIndexTops]}')`
 };
 
-// 2. create function that handles next
 const nextTops = () => {
     if (currentIndexTops < 9) {
         currentIndexTops += 1;
@@ -153,7 +139,6 @@ const previousBottoms = () => {
     url('${bottomsimages[currentIndexBottoms]}')`
 };
 
-// 2. create function that handles next
 const nextBottoms = () => {
     if (currentIndexBottoms < 11) {
         currentIndexBottoms += 1;
@@ -178,7 +163,6 @@ const previousShoes = () => {
     url('${shoesimages[currentIndexShoes]}')`
 };
 
-// 2. create function that handles next
 const nextShoes = () => {
     if (currentIndexShoes < 4) {
         currentIndexShoes += 1;
